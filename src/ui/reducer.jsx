@@ -15,7 +15,7 @@ export function reducer(state, action) {
       let totalWeekly = 0;
 
       const updatedSummaryData = state.summaryData.map((item) => {
-        const value = action.payload; // The input value representing annual income
+        const value = action.payload;
         let percent = 0;
         let yearMonWeek = 0;
 
@@ -39,20 +39,17 @@ export function reducer(state, action) {
           let yearMonWeek = 0;
 
           if (value <= 12570) {
-            percent = 100; // Full allowance
+            percent = 100;
             yearMonWeek = 12570;
           } else if (value > 12570 && value <= 100000) {
-            // Calculate the percentage of income that is covered by the tax-free allowance
             percent = Math.round((12570 / value) * 100);
             yearMonWeek = Math.round(12570);
           } else if (value > 100000 && value <= 125140) {
-            // For every £2 earned over £100,000, the allowance is reduced by £1
             let reduction = (value - 100000) / 2;
             let adjustedAllowance = Math.max(0, 12570 - reduction);
             percent = Math.round((adjustedAllowance / value) * 100);
             yearMonWeek = Math.round(adjustedAllowance);
           } else if (value > 125140) {
-            // No tax-free allowance at all for incomes over £125,140
             percent = 0;
           }
           return { percent, yearMonWeek };
@@ -132,7 +129,6 @@ export function reducer(state, action) {
             yearMonWeek = Math.round((125140 - 50271 + 12570) * 0.4);
           }
 
-          // Return an object containing both percent and yearMonWeek
           return { percent, yearMonWeek };
         };
 
@@ -288,7 +284,6 @@ export function reducer(state, action) {
 
       return { ...state, summaryData: updatedSummaryData };
     case "Reset":
-      // Return to initial state
       return initialState;
     default:
       throw new Error("Unknown action type");

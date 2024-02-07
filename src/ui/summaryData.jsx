@@ -63,7 +63,7 @@ export const summaryData = [
     monthly: "£0",
     weekly: "£0",
   },
-  // ... add other rows here
+
   {
     label: "Net Wage",
     percent: "0%",

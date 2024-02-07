@@ -15,21 +15,5 @@ export const getColorForLabel = (label) => {
     "Net Wage": "#A5D6A7", // Ivory
     // "Net Wage": "#fffff0", // Ivory
   };
-  return colors[label] || "#FFFFFF"; // default to white if label is not found
+  return colors[label] || "#FFFFFF";
 };
-
-// export const getColorForLabel = (label) => {
-//   const colors = {
-//     "Gross Pay": "#FFD700", // gold
-//     "Tax Free Allowance": "#ADFF2F", // greenyellow
-//     "Total taxable": "#7FFFD4", // aquamarine
-//     "Total Tax Due": "#00FFFF", // cyan
-//     "20% rate": "#1E90FF", // dodgerblue
-//     "40% rate": "#9932CC", // darkorchid
-//     "45% rate": "#FF1493", // deeppink
-//     "National Insurance": "#FF8C00", // darkorange
-//     "Total Deductions": "#B22222", // firebrick
-//     "Net Wage": "#20B2AA", // lightseagreen
-//   };
-//   return colors[label] || "#FFFFFF"; // default to white if label is not found
-// };

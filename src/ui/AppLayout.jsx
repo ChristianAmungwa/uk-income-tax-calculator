@@ -86,12 +86,7 @@ function AppLayout() {
           label={({ name, percent, value }) => `${name}: £${value}`}
         >
           {pieChartData.map((entry, index) => (
-            <Cell
-              //   key={`cell-${entry.name}-${index}`}
-              key={entry.fill}
-              fill={entry.fill}
-              stroke="#C30CE4"
-            />
+            <Cell key={entry.fill} fill={entry.fill} stroke="#C30CE4" />
           ))}
         </Pie>
         <Tooltip />
@@ -112,7 +107,7 @@ function AppLayout() {
       <Header>
         <div className="logo-text-container">
           <Link to="/">
-            <Logo /> {/* Logo component */}
+            <Logo />
           </Link>
           <Link to="/" style={{ textDecoration: "none", color: "black" }}>
             <h2>UK income tax calculator 💷</h2>
@@ -191,11 +186,7 @@ function AppLayout() {
             </thead>
             <tbody>
               {state.summaryData.map((item, index) => (
-                <StyledTr
-                  //   key={`item-${index}-${item.label}`}
-                  key={`${item.label}-${index}`}
-                  label={item.label}
-                >
+                <StyledTr key={`${item.label}-${index}`} label={item.label}>
                   <StyledTd>{item.label}</StyledTd>
                   <StyledTd>{item.percent}</StyledTd>
                   <StyledTd>{item.yearly}</StyledTd>
@@ -227,18 +218,9 @@ function AppLayout() {
                   >
                     {pieChartData.map((entry, index) => {
                       const key = `${entry.name}-${entry.value}-${index}`;
-                      {
-                        /* console.log("PieChart Cell Key:", key); */
-                      }
+
                       return <Cell key={key} fill={entry.fill} />;
                     })}
-                    {/* {pieChartData.map((entry, index) => (
-                      <Cell
-                        // key={`cell-${entry.name}-${entry.value}-${index}`}
-                        key={`${entry.name}-${entry.value}-${index}`}
-                        fill={entry.fill}
-                      />
-                    ))} */}
                   </Pie>
                   <Tooltip />
                   <Legend
