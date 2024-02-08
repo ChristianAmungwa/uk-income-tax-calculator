@@ -43,21 +43,21 @@ function AppLayout() {
 
   const pieChartData = [
     {
-      name: "Total Tax Due",
+      name: "Total Tax Due(£)",
       value: state.summaryData
         .find((item) => item.label === "Total Tax Due")
         .yearly.replace("£", ""),
       fill: "#FFA726",
     },
     {
-      name: "National Insurance",
+      name: "National Insurance(£)",
       value: state.summaryData
         .find((item) => item.label === "National Insurance")
         .yearly.replace("£", ""),
       fill: "#4FC3F7",
     },
     {
-      name: "Net Wage",
+      name: "Net Wage(£)",
       value: state.summaryData
         .find((item) => item.label === "Net Wage")
         .yearly.replace("£", ""),

@@ -5,9 +5,11 @@ export const Layout = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
   max-width: 1200px;
+
+  min-height: 100vh;
 
   @media (max-width: 768px) {
     margin: 2% 5%;
@@ -22,9 +24,12 @@ export const Header = styled.header`
   display: flex;
 
   align-items: center;
-  justify-content: start;
+  /* justify-content: start; */
   margin: 0 auto;
   max-width: 100%;
+
+  justify-content: space-between;
+  padding: 1rem;
 
   .logo-text-container {
     display: flex;
@@ -60,15 +65,22 @@ export const Header = styled.header`
 `;
 
 export const MainContent = styled.div`
-  flex-grow: 1;
+  /* flex-grow: 1;
   display: flex;
   justify-content: space-between;
   gap: 2.5%;
-  padding: 1%;
+  padding: 1%; */
+
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
+
+    align-items: center;
   }
 `;
 
@@ -78,6 +90,7 @@ export const Column = styled.div`
   border: 1px solid #ccc;
   text-align: left;
   height: 85%;
+  height: fit-content;
 
   &:first-child {
     @media (max-width: 768px) {
@@ -91,34 +104,49 @@ export const Column = styled.div`
 `;
 
 export const Footer = styled.footer`
-  padding: 1rem 0;
+  padding: 1rem;
   background-color: dark grey;
   display: flex;
-  gap: 2.4rem;
-  align-items: center;
   justify-content: center;
-  height: auto;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 1rem;
   }
 `;
+
+// export const Footer = styled.footer`
+//   padding: 1rem 0;
+//   background-color: dark grey;
+//   display: flex;
+//   gap: 2.4rem;
+//   align-items: center;
+//   justify-content: center;
+//   height: auto;
+
+//   @media (max-width: 768px) {
+//     flex-direction: column;
+//     gap: 1rem;
+//   }
+// `;
 
 export const ChartBox = styled.div`
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
-  padding: 1%.2;
+  /* padding: 1%.2; */
   margin-top: 0;
   margin-bottom: 10px;
+
+  padding: 1rem;
 
   & .recharts-pie-label-text {
     font-weight: 600;
   }
 
   @media (max-width: 768px) {
-    padding: 1.2rem;
+    /* padding: 1.2rem; */
+
+    padding: 1rem;
   }
 `;
 
