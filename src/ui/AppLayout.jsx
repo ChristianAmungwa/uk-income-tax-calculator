@@ -143,7 +143,7 @@ function AppLayout() {
                   }}
                 >
                   <button
-                    style={{ backgroundColor: "lightgray" }}
+                    style={{ backgroundColor: "#F50057", color: "white" }}
                     type="button"
                     onClick={() => {
                       const isConfirmed = window.confirm(
@@ -151,7 +151,7 @@ function AppLayout() {
                       );
                       if (isConfirmed) {
                         dispatch({ type: "Reset" });
-                        setInputValue(0);
+                        setInputValue("");
                       }
                     }}
                   >
